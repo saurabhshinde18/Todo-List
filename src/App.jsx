@@ -1,4 +1,4 @@
-import Create from "./components/create";
+import Create from "./components/Create";
 import Read from "./components/Read"
 import { useState } from "react";
 function App() {
