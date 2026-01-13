@@ -4,7 +4,7 @@ import { useState } from "react";
 function App() {
    const [task,settask] = useState([
            {"id":'1',
-           "name":'saurabh'}
+           "title":'saurabh'}
        ]);
   return (
     <>

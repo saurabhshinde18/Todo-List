@@ -1,11 +1,12 @@
 import React from 'react'
-
+import { toast } from 'react-toastify';
 
 const Read = ({task,settask}) => {
     
     function deletetask(id){
        const deleted = task.filter((item)=>item.id !==id);
        settask(deleted);
+       toast.info("Task Deleted Successfully!");
     }
     function addstrike(e){
       e.target.classList.toggle("line-through");
@@ -13,7 +14,7 @@ const Read = ({task,settask}) => {
     const rendertask =task.map((item)=>{
      return (
       <div className="flex p-4 items-center border mt-3 h-[60%]" key={item.id}>
-         <h3 className='text-2xl' onClick={addstrike}>{item.name}</h3>
+         <h3 className='text-2xl' onClick={addstrike}>{item.title}</h3>
         <button className='border  p-3  absolute hover:scale-110 bg-orange-500 right-[14%]' onClick={()=>{
           deletetask(item.id);
         }}>Delete Task</button>     
