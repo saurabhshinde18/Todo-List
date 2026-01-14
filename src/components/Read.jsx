@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { toast } from 'react-toastify';
+import {todocontext} from './Wrapper';
 
-const Read = ({task,settask}) => {
-    
+const Read = () => {
+    const [task,settask]= useContext(todocontext);
+  
     function deletetask(id){
        const deleted = task.filter((item)=>item.id !==id);
        settask(deleted);
